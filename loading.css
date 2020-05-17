@@ -1,0 +1,138 @@
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+html,body{
+    background-color:#222;
+}
+.wrapper{
+    position: relative;
+    width:200px;
+    height:200px;
+    border:1px solid #ccc;
+    margin:200px auto;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper .move-box{
+    position: absolute;
+    width:25px;
+    height:25px;
+    /* bordeR:1px solid #fff; */
+    animation: animationBox 6s linear infinite;
+    z-index:99;
+}
+.wrapper .move-top,
+.wrapper .move-bottom{
+    width:25px;
+    height:25px;
+    background-color:#FBBC05;   
+    border-radius: 50%;
+    position: absolute;
+    left:0;
+    top:0;
+}
+.wrapper .move-top{
+    clip: rect(0 30px 15px 0);
+    transform: rotate(-30deg);
+    animation: Animation9Shape4Top 0.4s ease infinite alternate;
+}
+.wrapper .move-bottom{
+    clip: rect(15px 30px 30px 0);
+    transform: rotate(45deg);
+    animation: Animation9Shape4Bottom 0.4s ease infinite alternate;
+}
+.wrapper .move-box img{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -15px;
+    left: -12px;
+    transform: rotate(-10deg);
+}
+.wrapper .move-box .eye{
+    width: 5px;
+    height: 5px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+.wrapper .circle{
+    width:60px;
+    height:10px;
+    /* bordeR:1px solid #fff; */
+}
+
+.wrapper .circle li{
+    float: left;
+    border-radius:50%;
+    margin-left:8px;
+    width:10px;
+    height:10px;
+    background-color:#fff;
+    animation: animationCircle 7s linear infinite;
+    background-color: #499255;
+}
+.wrapper .circle li:nth-child(1){
+    animation: animationCircle 7s linear infinite 1.5s;
+    background-color: #1875E5;
+}
+.wrapper .circle li:nth-child(2){
+    animation: animationCircle 7s linear infinite 3s;
+    background-color: #C5523F;
+}
+@keyframes animationBox {
+    0% {
+      left: 50px;
+      transform: rotateY(0);
+    }
+    45% {
+      left: 120px;
+      transform: rotateY(0);
+    }
+    50% {
+      left: 120px;
+      transform: rotateY(180deg);
+    }
+    95% {
+      left: 50px;
+      transform: rotateY(180deg);
+    }
+    100% {
+      left: 50px;
+      transform: rotateY(0);
+    }
+}
+@keyframes animationCircle{
+    0%{
+        opacity:1
+    }
+    50%{
+        opacity:0;
+    }
+    100%{
+        opacity:1
+    }
+}
+
+@keyframes Animation9Shape4Top {
+    0% {
+      transform: rotate(-30deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
+}
+@keyframes Animation9Shape4Bottom {
+    0% {
+      transform: rotate(45deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
+}
